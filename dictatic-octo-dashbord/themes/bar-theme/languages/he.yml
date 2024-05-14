@@ -1,0 +1,140 @@
+name: עברית
+
+favicon:
+  show: （●´3｀●）טוב מאוד
+  hide: (´Д｀)לא טוב
+
+title:
+  archive: ארכיון
+  category: קטגוריה
+  tag: תגית
+  all: הכל
+  not_found: Σ( ° △ °|||)︴404!
+  category_in: פורסם בקטגוריה "%s"
+  tag_in: פורסם עם תגית "%s"
+  archive_in: פורסם בתאריך "%s"
+
+menu:
+  home: דף הבית
+  posts: פוסטים
+  archives: ארכיונים
+  categories: קטגוריות
+  tags: תגיות
+  about: אודות
+  search: חיפוש
+
+sidebar:
+  overview: סקירה כללית
+  toc: תוכן העניינים
+  related: קשור
+
+index:
+  sticky: פוסטים נבחרים
+  category: קטגוריות
+  posts: רשימת פוסטים
+  random_posts: פוסטים אקראיים
+  recent_comments: תגובות אחרונות
+
+post:
+  posted: פורסם בתאריך
+  edited: נערך בתאריך
+  created: נוצר בתאריך
+  modified: שונה בתאריך
+  edit: ערוך פוסט זה
+  in: ב
+  read_more: קרא עוד
+  untitled: ללא כותרת
+  sticky: פוסט נבחר
+  views: צפיות
+  related_posts: פוסטים קשורים
+  next: הפוסט הבא
+  prev: הפוסט הקודם
+  copyright:
+    author: מחבר הפוסט
+    link: קישור לפוסט
+
+footer:
+  powered: "מופעל על ידי %s"
+  total_views: סך הצפיות
+  total_visitors: סך המבקרים
+
+counter:
+  index:
+    post: "%d פוסטים בסך הכל"
+    category: "%d תתי קטגוריות בסך הכל, "
+  tag_cloud:
+    zero: אין תגיות
+    one: תגית אחת בסך הכל
+    other: "%d תגיות בסך הכל"
+  categories:
+    zero: אין קטגוריות
+    one: קטגוריה אחת בסך הכל
+    other: "%d קטגוריות בסך הכל"
+  archive_posts:
+    zero: אין פוסטים.
+    one: פוסט אחד.
+    other: "%d פוסטים בסך הכל."
+
+state:
+  posts: פוסטים
+  tags: תגיות
+  categories: קטגוריות
+
+search:
+  placeholder: חיפוש הכל
+  empty: "לא נמצאו תוצאות לחיפוש: ${query}"
+  stats: "${hits} תוצאות נמצאו ב-${time} ms"
+
+cheers:
+  um: אממ..
+  ok: אוקי
+  nice: נחמד
+  good: טוב
+  great: מעולה
+  excellent: מצוין
+
+keep_on: המשיכו לפרסם.
+
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+  year: "שנה"
+  month: "חודש"
+
+reward:
+  donate: תרומה
+  text: לחיי עוד כוס [קפה]~(￣▽￣)~*
+  wechatpay: תשלום WeChat
+  alipay: תשלום Alipay
+  paypal: תשלום PayPal
+  bitcoin: ביטקוין
+
+follow_me:
+  welcome: ברוכים הבאים לשאר הערוצים
+
+accessibility:
+  nav_toggle: החלף סרגל ניווט
+  prev_page: עמוד קודם
+  next_page: עמוד הבא
+
+symbols_count_time:
+  count: מספר תווים במאמר
+  count_total: סך מספר התווים
+  time: זמן קריאה
+  time_total: זמן קריאה כולל
+  time_minutes: דקות
+  word: מילים
+  view: פעמים
+
+tips:
+  copyright: "הועתק ללוח בהצלחה! <br> כל המאמרים בבלוג זה מורשים תחת %s."
+  nocopy: "העתקה ללוח נכשלה! דף זה אסור להדפיס מחדש."
+
+quiz:
+  choice: שאלות בחירה מרובה
+  multiple: תשובות מרובות
+  true_false: נכון/לא נכון
+  essay: שאלות פתוחות
+  gap_fill: מילוי פערים
+  mistake: תשובה שגויה
