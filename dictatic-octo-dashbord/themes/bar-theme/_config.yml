@@ -90,14 +90,14 @@ iconfont: "1832207_igi8uaupcus"
 
 menu:
   home: / || home
-  # about: /about/ || user
-  # posts:
-  #   default: / || feather
-  #   archives: /archives/ || list-alt
-  #   categories: /categories/ || th
-  #   tags: /tags/ || tags
-  # friends: /friends/ || heart
-  # links: /links/ || magic
+  about: /about/ || user
+  posts:
+    default: / || feather
+    archives: /archives/ || list-alt
+    categories: /categories/ || th
+    tags: /tags/ || tags
+  passion: /passion/ || heart
+  links: /links/ || magic
 
 # Social Links
 # Usage: `Key: permalink || icon || color`
@@ -139,10 +139,10 @@ footer:
   icon:
     name: sakura rotate
     # Change the color of icon, using Hex Code.
-    color: "#ffc0cb"
+    color: "#ff69b4"
   # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
   count: false
-  powered: true
+  powered: false
 
 post:
   # Dependencies: https://github.com/theme-next/hexo-symbols-count-time

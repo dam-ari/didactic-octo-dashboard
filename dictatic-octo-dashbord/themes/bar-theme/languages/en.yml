@@ -107,7 +107,7 @@ symbol:
 
 reward:
   donate: Donate
-  text: Give me a cup of [coffee]~(￣▽￣)~*
+  text: Cheers with a cup of [coffee]~(￣▽￣)~*
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
