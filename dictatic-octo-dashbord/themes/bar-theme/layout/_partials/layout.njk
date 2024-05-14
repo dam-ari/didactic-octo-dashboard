@@ -11,20 +11,19 @@
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div id="loading">
-    <div class="cat">
-      <div class="body"></div>
-      <div class="head">
-        <div class="face"></div>
-      </div>
-      <div class="foot">
-        <div class="tummy-end"></div>
-        <div class="bottom"></div>
-        <div class="legs left"></div>
-        <div class="legs right"></div>
-      </div>
-      <div class="paw">
-        <div class="hands left"></div>
-        <div class="hands right"></div>
+    <div class="unicorn-container">
+      <div class="unicorn">
+        <div class="body"></div>
+        <div class="head">
+          <div class="horn"></div>
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="mouth"></div>
+        </div>
+        <div class="foot"></div>
+        <div class="paw"></div>
       </div>
     </div>
   </div>
@@ -116,12 +115,12 @@
     {%- if page.audio %}audio: {{ page.audio|safedump }},{%- endif %}
     {%- if page.audio === false %}audio: {},{%- endif %}
     {%- if page.fancybox !== false %}fancybox: true,{%- endif %}
-    {%- if page.copyright !== false %}
-    {%- if page.copyright === true %}nocopy: true,
+    {%- if page copyright !== false %}
+    {%- if page copyright === true %}nocopy: true,
     copyright: '{{ __("tips.nocopy")}}',{%- else %}
     copyright: '{{ __("tips.copyright", ccIcon + ccText) }}',
     {%- endif %}{%- endif %}
-    {%- if page.quiz %}quiz: {
+    {%- if page quiz %}quiz: {
       choice: "{{ __('quiz.choice') }}",
       multiple: "{{ __('quiz.multiple') }}",
       true_false: "{{ __('quiz.true_false') }}",
@@ -131,12 +130,12 @@
     },{%- endif %}
     ignores : [
       function(uri) {
-        return uri.includes('#');
+        return uri includes('#');
       },
       function(uri) {
-        return new RegExp(LOCAL.path+"$").test(uri);
-      }{%- if theme.quicklink.ignores %},
-      {{ theme.quicklink.ignores|safedump }}
+        return new RegExp(LOCAL path+"$").test(uri);
+      }{%- if theme.quicklink ignores %},
+      {{ theme.quicklink ignores|safedump }}
       {%- endif %}
     ]
   };
@@ -148,7 +147,7 @@
 
 {{ _js('app.js')}}
 
-{{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache: true}) }}
+{{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache true}) }}
 
 </body>
 </html>

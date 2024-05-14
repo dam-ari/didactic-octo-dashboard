@@ -16,7 +16,7 @@ images: images
 # themes/bar-theme/source/images/***
 favicon:
   apple_touch_icon: /apple-touch-icon.png
-  #safari_pinned_tab: /logo.svg
+  safari_pinned_tab: /logo.svg
   #android_manifest: /manifest.json
   #ms_browserconfig: /browserconfig.xml
 
@@ -60,7 +60,7 @@ font:
   logo:
     external: true
     family: Fredericka the Great
-    size: 3.5
+    size: 2.5
 
   # Font settings for site title.
   title:
@@ -105,7 +105,7 @@ menu:
 # Value before `||` delimiter is the target permalink,
 # secend value is the name of Font icon.
 social:
-  #github: https://github.com/yourname || github || "#191717"
+  github: https://github.com/dam-ari || github || "#191717"
   #google: https://plus.google.com/yourname || google
   #twitter: https://twitter.com/yourname || twitter || "#00aff0"
   #zhihu: https://www.zhihu.com/people/yourname || zhihu || "#1e88e5"
@@ -139,7 +139,7 @@ footer:
   icon:
     name: sakura rotate
     # Change the color of icon, using Hex Code.
-    color: "#ff69b4"
+    color: "#87ceeb"
   # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
   count: false
   powered: false
@@ -266,13 +266,6 @@ google_site_verification:
 # See: https://www.bing.com/webmaster
 bing_site_verification:
 
-# Yandex Webmaster tools verification.
-# See: https://webmaster.yandex.ru
-yandex_site_verification:
-
-# Baidu Webmaster tools verification.
-# See: https://ziyuan.baidu.com/site
-baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
