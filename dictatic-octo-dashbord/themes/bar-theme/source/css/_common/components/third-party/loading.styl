@@ -18,37 +18,39 @@
   overflow: hidden
 
 .unicorn
-  width: 60px
+  width: 50px
   height: 60px
   position: absolute
   top: 45px
   left: -60px
-  animation: gallop-unicorn 4s linear infinite
+  animation: gallop-unicorn 5s linear infinite
 
 .unibody
   width: 60px
-  height: 60px
-  background: linear-gradient(to bottom, #ffffff, #f5e3c9)
-  border-radius: 50%
-  position: absolute
-  animation: body-gallop 4s linear infinite
-
-.head
-  width: 40px
   height: 40px
   background: linear-gradient(to bottom, #ffffff, #f5e3c9)
-  border-radius: 50%
+  border-radius: 20% 20% 30% 25%
+  position: absolute
+  top: 30px
+  left: 15px
+  animation: body-gallop 5s linear infinite
+
+.head
+  width: 35px
+  height: 40px
+  background: linear-gradient(to bottom, #ffffff, #f5e3c9)
+  border-radius: 50% 50% 60% 80%
   position: absolute
   top: 10px
   left: 40px
 
 .horn
-  width: 10px
-  height: 20px
+  width: 15px
+  height: 30px
   background: linear-gradient(to bottom, #ff7eb9, #ff65a3, #7afcff)
   position: absolute
-  top: -10px
-  left: 15px
+  top: -12px
+  left: 10px
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
 
@@ -56,7 +58,7 @@
   width: 10px
   height: 15px
   background: linear-gradient(to bottom, #ffffff, #f5e3c9)
-  border-radius: 50%
+  border-radius: 60%
   position: absolute
 
 .ear.left
@@ -83,22 +85,55 @@
   right: 10px
 
 .mouth
-  width: 10px
+  width: 5px
   height: 5px
   background-color: #333
-  border-radius: 5px / 2.5px
+  border-radius: 80%
   position: absolute
   top: 25px
   left: 15px
 
-.foot
-  width: 20px
-  height: 20px
+.leg
+  width: 5px
+  height: 40px
   background: linear-gradient(to bottom, #ffffff, #f5e3c9)
+  border-radius: 2px 2px 0 0
+  position: absolute
+
+.leg.front-left
+  top: 40px
+  left: 20px
+  z-index: 2
+  animation: leg-gallop-right 5s linear infinite
+
+.leg.front-right
+  top: 40px
+  left: 35px
+  z-index: 1
+  animation: leg-gallop-right 4s linear infinite .2s
+
+.leg.back-left
+  top: 50px
+  left: 50px
+  z-index: 2
+  animation: leg-gallop-left 5s linear infinite .4s
+
+.leg.back-right
+  top: 50px
+  left: 65px
+  z-index: 1
+  animation: leg-gallop-left 4s linear infinite .6s
+
+.tail
+  width: 15px
+  height: 50px
+  background: linear-gradient(to bottom, #67e8f9, #38bdf8)
   border-radius: 50%
   position: absolute
-  top: 40px
-  left: 10px
+  top: 0px
+  left: -5px
+  z-index: -1
+  animation: tail-gallop 4s linear infinite
 
 .paw
   width: 20px
@@ -154,7 +189,50 @@
     transform: scale(0.8, 1.2);
   }
 
-unibody.loaded #loading
+@keyframes leg-gallop-left
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+
+@keyframes leg-gallop-right
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+
+@keyframes tail-gallop
+  0% {
+    transform: rotate(25deg) translateZ(1);
+    border-radius: 50%
+    left: -5px
+  }
+  50% {
+    transform: rotate(-30deg) translateZ(-20px);
+  }
+  100% {
+    transform: rotate(25deg) translateZ(0);
+    border-radius: 80%
+    left: 15px
+  }
+
+body.loaded #loading
   opacity: 0
   visibility: hidden
   pointer-events: none
