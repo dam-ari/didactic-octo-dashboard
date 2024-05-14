@@ -13,7 +13,8 @@
   <div id="loading">
     <div class="unicorn-container">
       <div class="unicorn">
-        <div class="body"></div>
+        <div class="mane"></div>
+        <div class="unibody"></div>
         <div class="head">
           <div class="horn"></div>
           <div class="ear left"></div>
@@ -22,8 +23,11 @@
           <div class="eye right"></div>
           <div class="mouth"></div>
         </div>
-        <div class="foot"></div>
-        <div class="paw"></div>
+        <div class="leg front-left"></div>
+        <div class="leg front-right"></div>
+        <div class="leg back-left"></div>
+        <div class="leg back-right"></div>
+        <div class="tail"></div>
       </div>
     </div>
   </div>
@@ -106,8 +110,8 @@
       empty: "{{ __('search.empty') }}",
       stats: "{{ __('search.stats') }}"
     },
-    {%- if theme.widgets.recent_comments or page.comment !== false  %}
-    valine: {{ page.valine|safedump if page.valine else "true"  }},{%- endif %}
+    {%- if theme.widgets.recent_comments or page.comment !== false %}
+    valine: {{ page.valine|safedump if page.valine else "true" }},{%- endif %}
     {%- if page.chart %}chart: true,{%- endif %}
     {%- if page.math %}copy_tex: true,
     katex: true,{%- endif %}
@@ -115,12 +119,12 @@
     {%- if page.audio %}audio: {{ page.audio|safedump }},{%- endif %}
     {%- if page.audio === false %}audio: {},{%- endif %}
     {%- if page.fancybox !== false %}fancybox: true,{%- endif %}
-    {%- if page copyright !== false %}
-    {%- if page copyright === true %}nocopy: true,
-    copyright: '{{ __("tips.nocopy")}}',{%- else %}
+    {%- if page.copyright !== false %}
+    {%- if page.copyright === true %}nocopy: true,
+    copyright: '{{ __("tips.nocopy") }}',{%- else %}
     copyright: '{{ __("tips.copyright", ccIcon + ccText) }}',
     {%- endif %}{%- endif %}
-    {%- if page quiz %}quiz: {
+    {%- if page.quiz %}quiz: {
       choice: "{{ __('quiz.choice') }}",
       multiple: "{{ __('quiz.multiple') }}",
       true_false: "{{ __('quiz.true_false') }}",
@@ -130,12 +134,12 @@
     },{%- endif %}
     ignores : [
       function(uri) {
-        return uri includes('#');
+        return uri.includes('#');
       },
       function(uri) {
-        return new RegExp(LOCAL path+"$").test(uri);
-      }{%- if theme.quicklink ignores %},
-      {{ theme.quicklink ignores|safedump }}
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }{%- if theme.quicklink.ignores %}
+      ,{{ theme.quicklink.ignores|safedump }}
       {%- endif %}
     ]
   };
@@ -147,7 +151,7 @@
 
 {{ _js('app.js')}}
 
-{{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache true}) }}
+{{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache: true}) }}
 
 </body>
 </html>
