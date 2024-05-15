@@ -42,9 +42,9 @@ hexo.extend.generator.register("script", function (locals) {
 
   if (config.algolia) {
     siteConfig.search = {
-      appID: config.algolia.appId,
-      apiKey: config.algolia.apiKey,
-      indexName: config.algolia.indexName,
+      appID: 'Z52OAHCPAD',
+      apiKey: 'f8f462ccabd4abfec7507e1a2c23b488',
+      indexName: 'verse',
       hits: theme.search.hits,
     };
   }

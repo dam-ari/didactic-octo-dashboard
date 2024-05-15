@@ -253,7 +253,7 @@ const postBeauty = function () {
     caption && caption.addEventListener('click', fullscreenHandle);
 
     if(code_container && code_container.find("tr").length > 15) {
-      
+
       code_container.style.maxHeight = "300px";
       code_container.insertAdjacentHTML('beforeend', '<div class="show-btn"><i class="ic i-angle-down"></i></div>');
       var showBtn = code_container.child('.show-btn');
@@ -442,8 +442,8 @@ const algoliaSearch = function(pjax) {
   }
 
   var search = instantsearch({
-    indexName: CONFIG.search.indexName,
-    searchClient  : algoliasearch(CONFIG.search.appID, CONFIG.search.apiKey),
+    indexName: 'verse',
+    searchClient  : algoliasearch('Z52OAHCPAD', 'f8f462ccabd4abfec7507e1a2c23b488'),
     searchFunction: function(helper) {
       var searchInput = $('.search-input');
       if (searchInput.value) {
