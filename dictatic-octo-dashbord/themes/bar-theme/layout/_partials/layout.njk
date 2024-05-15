@@ -76,7 +76,7 @@
       </svg>
     </div>
     <main>
-      <div class="inner">
+      <div class="inner" style="max-width: 90vw;">
         <div id="main" class="pjax">
           {% block content %}{% endblock %}
         </div>
@@ -154,6 +154,28 @@
 {{ _js('app.js')}}
 
 {{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache: true}) }}
+
+<!-- Include the search container HTML -->
+<div id="search" style="display: none;">
+    <div class="inner">
+        <div class="header">
+            <span class="icon"><i class="ic i-search"></i></span>
+            <div class="search-input-container">
+                <input type="text" class="search-input" placeholder="{{ LOCAL.search.placeholder }}">
+            </div>
+            <span class="close-btn"><i class="ic i-times-circle"></i></span>
+        </div>
+        <div class="results">
+            <div class="inner">
+                <div id="search-stats"></div>
+                <div id="search-hits"></div>
+                <div id="search-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for(theme.js + '/search.js') }}"></script>
 
 </body>
 </html>
