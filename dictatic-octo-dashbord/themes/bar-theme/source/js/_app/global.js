@@ -54,12 +54,12 @@ const changeTheme = function(type) {
   var btn = $('.theme .ic')
   if(type == 'dark') {
     HTML.attr('data-theme', type);
-    btn.removeClass('i-sun')
-    btn.addClass('i-moon')
+    btn.removeClass('i-moon')
+    btn.addClass('i-sun')
   } else {
     HTML.attr('data-theme', null);
-    btn.removeClass('i-moon');
-    btn.addClass('i-sun');
+    btn.removeClass('i-sun');
+    btn.addClass('i-moon');
   }
 }
 
@@ -105,7 +105,7 @@ const themeColorListener = function () {
         });
     }
 
-    if(btn.hasClass('i-sun')) {
+    if(btn.hasClass('i-moon')) {
       var c = function() {
           neko.addClass('dark');
           changeTheme('dark');
