@@ -2,8 +2,6 @@
   @extend $fix-fullscreen;
   display: none;
   background: linear-gradient(to top, #fddb92 0%, #d1fdff 80%);
-  position: relative;
-  overflow: hidden;
 
   .planet {
     position: fixed;
@@ -70,7 +68,7 @@
       width: 0;
       height: 0;
       border-bottom: 20px solid #f3e5f5;
-      top: -20px;
+      top: -10px;
       transition: all .25s ease-in-out;
     }
     &:before {
@@ -95,12 +93,11 @@
       display: block;
       position: absolute;
       background: #fff;
-      height: 30px;
+      height: 20px;
       width: 30px;
       border-radius: 50%;
       bottom: 100px;
-      border: 2px solid #000;
-      overflow: hidden;
+      border: 2px solid #444;
     }
 
     .eyes.left {
@@ -123,17 +120,6 @@
       transform: translate(-50%, -50%);
     }
 
-    .eyes::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      top: 0;
-      left: 0;
-      animation: blink 4s infinite;
-    }
-
     .nose {
       position: absolute;
       top: 70px;
@@ -147,47 +133,20 @@
 
     .horn {
       position: absolute;
-      top: -30px;
+      top: -70px;
       left: 50%;
       transform: translateX(-50%);
-      width: 20px;
-      height: 60px;
-      background:  linear-gradient(45deg,rgba(255,182,185,.9) 25%,transparent 0,transparent 50%,rgba(250,227,217,.9) 0,rgba(187,222,214,.9) 75%,transparent 0,rgba(138,198,209,.9));
+      width: 40px;
+      height: 90px;
+      background:  linear-gradient(45deg,rgba(255,182,185,.9) 25%,transparent 0,rgba(250,227,217,.9) 50%,transparent 0,rgba(187,222,214,.9) 75%,transparent 0,rgba(138,198,209,.9));
       border-radius: 50% 50% 0 0;
       box-shadow: 0px -5px 15px rgba(255, 235, 59, 0.5);
-      animation: hornAnim 2s infinite;
     }
-  }
-
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 10px white;
-    animation: starAnim linear infinite;
   }
 
   @keyframes faceAnim {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
-  }
-
-  @keyframes blink {
-    0%, 20%, 50%, 70%, 100% { height: 100%; }
-    25%, 65% { height: 0; }
-  }
-
-  @keyframes hornAnim {
-    0%, 100% { transform: translateX(-50%) rotate(0deg); }
-    50% { transform: translateX(-50%) rotate(10deg); }
-  }
-
-  @keyframes starAnim {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(0.5); opacity: 0.5; }
-    100% { transform: scale(1); opacity: 1; }
   }
 
   &.dark {
@@ -206,10 +165,10 @@
     .body {
       background: #444;
       &:before {
-        border-bottom: 20px solid #444;
+        border-bottom: 10px solid #444;
       }
       &:after {
-        border-bottom: 20px solid #444;
+        border-bottom: 10px solid #444;
       }
 
       .eyes {
@@ -224,11 +183,6 @@
       .nose {
         background: #ff8a80;
       }
-    }
-
-    .star {
-      background: #fff;
-      box-shadow: 0 0 10px #fff;
     }
   }
 }

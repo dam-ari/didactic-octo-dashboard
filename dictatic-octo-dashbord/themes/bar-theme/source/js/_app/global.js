@@ -126,9 +126,6 @@ const themeColorListener = function () {
     })
   });
 
-
-
-
 }
 
 const visibilityListener = function () {
