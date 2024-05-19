@@ -153,8 +153,8 @@ reward:
   # If true, reward will be displayed in every article by default.
   enable: true
   account:
-    wechatpay: /wechatpay.png
-    alipay: /alipay.png
+    # wechatpay: /wechatpay.png
+    # alipay: /alipay.png
     paypal: /paypal.png
 
 # TagCloud settings for tags page.
@@ -172,12 +172,10 @@ tagcloud:
 # ---------------------------------------------------------------
 
 # Creative Commons 4.0 International License.
-# See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons:
-  license: by-nc-sa
+  # license: by-nc-sa
   language: deed.zh
 
 # Comments
@@ -254,7 +252,7 @@ quicklink:
 # ---------------------------------------------------------------
 # analytics & SEO Settings
 # ---------------------------------------------------------------
-baidu_analytics: # <app_id>
+# baidu_analytics: # <app_id>
 
 # Disable Baidu transformation on mobile devices.
 disable_baidu_transformation: true
@@ -272,7 +270,7 @@ bing_site_verification:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+# baidu_push: false
 
 
 #! ---------------------------------------------------------------
@@ -283,7 +281,7 @@ baidu_push: false
 vendors:
   css:
     katex: npm/katex@0.12.0/dist/katex.min.css
-    comment: css/comment.css
+    # comment: css/comment.css
     fancybox: combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css
   js:
     pace: npm/pace-js@1.0.2/pace.min.js
