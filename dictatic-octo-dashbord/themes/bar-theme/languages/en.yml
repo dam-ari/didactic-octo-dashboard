@@ -108,8 +108,6 @@ symbol:
 reward:
   donate: Donate
   text: Cheers with a cup of [coffee]~(￣▽￣)~*
-  wechatpay: WeChat Pay
-  alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
 
