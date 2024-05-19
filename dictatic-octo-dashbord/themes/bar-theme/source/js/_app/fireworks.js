@@ -92,21 +92,21 @@ function animateParticules(x, y) {
         return p.endPos.y;
       },
       radius: 0.1,
-      duration: anime.random(1200, 1800),
+      duration: anime.random(1600, 1900),
       easing: "easeOutExpo",
       update: renderParticule,
     })
     .add(
       {
         targets: circle,
-        radius: anime.random(80, 160),
+        radius: anime.random(60, 140),
         lineWidth: 0,
         alpha: {
           value: 0,
           easing: "linear",
           duration: anime.random(600, 800),
         },
-        duration: anime.random(1200, 1800),
+        duration: anime.random(1200, 2000),
         easing: "easeOutExpo",
         update: renderParticule,
       },
