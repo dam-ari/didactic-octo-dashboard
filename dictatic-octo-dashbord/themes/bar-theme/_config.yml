@@ -213,11 +213,11 @@ creative_commons:
 
 # bgm
 audio:
-  # - title: 列表1
+  # - title: title
   #   list:
   #    - https://music.163.com/#/playlist?id=2943811283
   #    - https://music.163.com/#/playlist?id=2297706586
-  # - title: 列表2
+  # - title: title2
   #   list:
   #    - https://music.163.com/#/playlist?id=2031842656
 

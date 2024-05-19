@@ -7,12 +7,12 @@ If you would like to customize the default translation, you do not need to modif
 
     ```yml
     # language
-    zh-CN:
+    he:
       # items
       post:
         copyright:
           # the translation you perfer
-          author: 本文博主
+          author: 
     en:
       menu:
         schedule: Calendar
