@@ -431,21 +431,13 @@ const loadComments = function () {
 }
 
 const algoliaSearch = function(pjax) {
-  if(CONFIG.search === null)
-    return
-
-  if(!siteSearch) {
-    siteSearch = BODY.createChild('div', {
-      id: 'search',
-      innerHTML: '<div class="inner"><div class="header"><span class="icon"><i class="ic i-search"></i></span><div class="search-input-container"></div><span class="close-btn"><i class="ic i-times-circle"></i></span></div><div class="results"><div class="inner"><div id="search-stats"></div><div id="search-hits"></div><div id="search-pagination"></div></div></div></div>'
-    });
-  }
+  var siteSearch = document.getElementById('search');
 
   var search = instantsearch({
-    indexName: 'verse',
-    searchClient  : algoliasearch('Z52OAHCPAD', 'f8f462ccabd4abfec7507e1a2c23b488'),
+    indexName: CONFIG.search.indexName,
+    searchClient: algoliasearch(CONFIG.search.appID, CONFIG.search.apiKey),
     searchFunction: function(helper) {
-      var searchInput = $('.search-input');
+      var searchInput = document.querySelector('.search-input');
       if (searchInput.value) {
         helper.search();
       }
@@ -453,7 +445,7 @@ const algoliaSearch = function(pjax) {
   });
 
   search.on('render', function() {
-    pjax.refresh($('#search-hits'));
+    pjax.refresh(document.getElementById('search-hits'));
   });
 
   // Registering Widgets
@@ -463,13 +455,12 @@ const algoliaSearch = function(pjax) {
     }),
 
     instantsearch.widgets.searchBox({
-      container           : '.search-input-container',
-      placeholder         : LOCAL.search.placeholder,
-      // Hide default icons of algolia search
-      showReset           : false,
-      showSubmit          : false,
+      container: '.search-input-container',
+      placeholder: LOCAL.search.placeholder,
+      showReset: false,
+      showSubmit: false,
       showLoadingIndicator: false,
-      cssClasses          : {
+      cssClasses: {
         input: 'search-input'
       }
     }),
@@ -490,12 +481,13 @@ const algoliaSearch = function(pjax) {
       container: '#search-hits',
       templates: {
         item: function(data) {
-          var cats = data.categories ? '<span>'+data.categories.join('<i class="ic i-angle-right"></i>')+'</span>' : '';
-          return '<a href="' + CONFIG.root + data.path +'">'+cats+data._highlightResult.title.value+'</a>';
+          console.log(data)
+          var cats = data.categories ? '<span>' + data.categories.join('<i class="ic i-angle-right"></i>') + '</span>' : '';
+          return '<a href="' + CONFIG.root + data.path + '">' + cats + data._highlightResult.title.value + '</a>';
         },
         empty: function(data) {
-          return '<div id="hits-empty">'+
-              LOCAL.search.empty.replace(/\$\{query}/, data.query) +
+          return '<div id="hits-empty">' +
+            LOCAL.search.empty.replace(/\$\{query}/, data.query) +
             '</div>';
         }
       },
@@ -506,19 +498,19 @@ const algoliaSearch = function(pjax) {
 
     instantsearch.widgets.pagination({
       container: '#search-pagination',
-      scrollTo : false,
+      scrollTo: false,
       showFirst: false,
-      showLast : false,
+      showLast: false,
       templates: {
-        first   : '<i class="ic i-angle-double-left"></i>',
-        last    : '<i class="ic i-angle-double-right"></i>',
+        first: '<i class="ic i-angle-double-left"></i>',
+        last: '<i class="ic i-angle-double-right"></i>',
         previous: '<i class="ic i-angle-left"></i>',
-        next    : '<i class="ic i-angle-right"></i>'
+        next: '<i class="ic i-angle-right"></i>'
       },
       cssClasses: {
-        root        : 'pagination',
-        item        : 'pagination-item',
-        link        : 'page-number',
+        root: 'pagination',
+        item: 'pagination-item',
+        link: 'page-number',
         selectedItem: 'current',
         disabledItem: 'disabled-item'
       }
@@ -528,12 +520,13 @@ const algoliaSearch = function(pjax) {
   search.start();
 
   // Handle and trigger popup window
-  $.each('.search', function(element) {
+  document.querySelectorAll('.search').forEach(function(element) {
     element.addEventListener('click', function() {
       document.body.style.overflow = 'hidden';
+      siteSearch.style.display = 'block';
       transition(siteSearch, 'shrinkIn', function() {
-          $('.search-input').focus();
-        }) // transition.shrinkIn
+        document.querySelector('.search-input').focus();
+      }); // transition.shrinkIn
     });
   });
 
@@ -548,7 +541,7 @@ const algoliaSearch = function(pjax) {
       onPopupClose();
     }
   });
-  $('.close-btn').addEventListener('click', onPopupClose);
+  document.querySelector('.close-btn').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keyup', function(event) {
     if (event.key === 'Escape') {

@@ -152,6 +152,7 @@
 {{ _vendor_js() }}
 
 {{ _js('app.js')}}
+<script src="{{ url_for(theme.js + '/search.js') }}"></script>
 
 {{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache: true}) }}
 
@@ -161,7 +162,6 @@
         <div class="header">
             <span class="icon"><i class="ic i-search"></i></span>
             <div class="search-input-container">
-                <input type="text" class="search-input" placeholder="{{ LOCAL.search.placeholder }}">
             </div>
             <span class="close-btn"><i class="ic i-times-circle"></i></span>
         </div>
@@ -175,7 +175,8 @@
     </div>
 </div>
 
-<script src="{{ url_for(theme.js + '/search.js') }}"></script>
+
+
 
 </body>
 </html>

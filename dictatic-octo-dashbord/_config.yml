@@ -102,3 +102,11 @@ theme: bar-theme
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+
+algolia:
+  appId: 'Z52OAHCPAD'
+  apiKey: 'f8f462ccabd4abfec7507e1a2c23b488'
+  adminApiKey: 'd8001ddb8369cff94da0e20be19e91a6'
+  indexName: 'verse'
+  fields: ['title', 'content', 'permalink', 'path',  'date', 'category', 'tags']
