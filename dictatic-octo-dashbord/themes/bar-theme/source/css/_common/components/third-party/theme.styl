@@ -52,8 +52,8 @@
   .body {
     display: block;
     position: absolute;
-    bottom: -20px;
-    height: 180px;
+    bottom: 50px;
+    height: 120px;
     width: 160px;
     left: 50%;
     margin-left: -80px;
@@ -92,11 +92,11 @@
     .eyes {
       display: block;
       position: absolute;
-      background: #fff;
+      background: lightgrey;
       height: 20px;
       width: 30px;
       border-radius: 50%;
-      bottom: 100px;
+      bottom: 70px;
       border: 2px solid #444;
     }
 
@@ -115,9 +115,10 @@
       border-radius: 50%;
       width: 10px;
       height: 10px;
-      top: 50%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
+      animation: eyeRoll 2s infinite ;
     }
 
     .nose {
@@ -143,11 +144,19 @@
       box-shadow: 0px -5px 15px rgba(255, 235, 59, 0.5);
     }
   }
+@keyframes eyeRoll {
+  0%, 100% { top: 30%; left: 50%; }
+  25% { top: 40%; left: 75%; }
+  50% { top: 50%; left: 50%; }
+  75% { top: 40%; left: 15%; }
+}
+
 
   @keyframes faceAnim {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
   }
+
 
   &.dark {
     &:before {
