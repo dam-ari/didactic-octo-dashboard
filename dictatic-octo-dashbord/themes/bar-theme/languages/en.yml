@@ -6,8 +6,8 @@ favicon:
 
 title:
   archive: Archive
-  category: Category
-  tag: Tag
+  category: Categories
+  tag: Tags
   all: All
   not_found: Σ( ° △ °|||)︴404!
   category_in: Posted in category "%s"
