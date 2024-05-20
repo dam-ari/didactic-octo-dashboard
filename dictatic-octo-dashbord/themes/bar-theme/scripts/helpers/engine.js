@@ -15,20 +15,21 @@ const randomBG = function(count = 1, image_server = null, image_list = []) {
     if(count && count > 1) {
       var arr = new Array(count);
       for(var i=0; i < arr.length; i++){
-        arr[i] = image_server + '?' + Math.floor(Math.random() * 999999)
+        arr[i] = image_server + image_list[Math.floor(Math.random() * image_list.length)]
       }
 
       return arr;
     }
 
-    return image_server + '?' + Math.floor(Math.random() * 999999)
+    return image_server + image_list[Math.floor(Math.random() * image_list.length)]
   }
 
   var parseImage = function(img, size) {
     if (img.startsWith('//') || img.startsWith('http')) {
       return img
     } else {
-      return 'https://tva'+randomServer+'.sinaimg.cn/'+size+'/'+img
+
+      return 'https://picsum.photos/1600/1000'+'/'+img
     }
   }
 
@@ -122,7 +123,7 @@ hexo.extend.helper.register('_cover', function(item, num) {
   const { statics, js, image_server, image_list } = hexo.theme.config;
 
   if(item.cover) {
-    return this._image_url(item.cover, item.path)
+    console.log("1", this._image_url(item.cover, item.path))
   } else if (item.photos && item.photos.length > 0) {
     return this._image_url(item.photos[0], item.path)
   } else {

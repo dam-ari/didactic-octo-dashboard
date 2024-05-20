@@ -250,10 +250,7 @@ quicklink:
 # ---------------------------------------------------------------
 # analytics & SEO Settings
 # ---------------------------------------------------------------
-# baidu_analytics: # <app_id>
 
-# Disable Baidu transformation on mobile devices.
-disable_baidu_transformation: true
 
 # Automatically add external URL with Base64 encrypt & decrypt.
 exturl: true
@@ -265,10 +262,6 @@ google_site_verification:
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmaster
 bing_site_verification:
-
-
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-# baidu_push: false
 
 
 #! ---------------------------------------------------------------
