@@ -11,30 +11,36 @@ const path = require('path');
 const randomServer = parseInt(Math.random()*4,10)+1
 
 const randomBG = function(count = 1, image_server = null, image_list = []) {
-  if (image_server) {
-    if(count && count > 1) {
-      var arr = new Array(count);
-      for(var i=0; i < arr.length; i++){
-        arr[i] = image_server + image_list[Math.floor(Math.random() * image_list.length)]
-      }
+  if (!Array.isArray(image_list) || image_list.length === 0) {
+    return 'https://picsum.photos/1600/1000'; // Return a default image if image_list is empty or invalid
+  }
 
+  if (image_server) {
+    if (count && count > 1) {
+      var arr = new Array(count);
+      for (var i = 0; i < arr.length; i++) {
+        arr[i] = image_server + image_list[Math.floor(Math.random() * image_list.length)];
+      }
       return arr;
     }
-
-    return image_server + image_list[Math.floor(Math.random() * image_list.length)]
+    return image_server + image_list[Math.floor(Math.random() * image_list.length)];
   }
 
   var parseImage = function(img, size) {
+    if (!img) return 'https://picsum.photos/1600/1000'; // Return a default image if img is undefined
     if (img.startsWith('//') || img.startsWith('http')) {
-      return img
+      return img;
     } else {
-
-      return 'https://picsum.photos/1600/1000'+'/'+img
+      return 'https://picsum.photos/1600/1000/' + img;
     }
-  }
+  };
 
-  if(count && count > 1) {
-    var shuffled = image_list.slice(0), i = image_list.length, min = i - count, temp, index;
+  if (count && count > 1) {
+    var shuffled = image_list.slice(0),
+      i = image_list.length,
+      min = i - count,
+      temp,
+      index;
     while (i-- > min) {
       index = Math.floor((i + 1) * Math.random());
       temp = shuffled[index];
@@ -42,13 +48,14 @@ const randomBG = function(count = 1, image_server = null, image_list = []) {
       shuffled[i] = temp;
     }
 
-    return shuffled.slice(min).map(function(img) {
-      return parseImage(img, 'large')
+    return shuffled.slice(min).map(function (img) {
+      return parseImage(img, 'large');
     });
   }
 
-  return parseImage(image_list[Math.floor(Math.random() * image_list.length)], 'mw690')
-}
+  return parseImage(image_list[Math.floor(Math.random() * image_list.length)], 'mw690');
+};
+
 
 hexo.extend.helper.register('_url', function(path, text, options = {}) {
   if(!path)
