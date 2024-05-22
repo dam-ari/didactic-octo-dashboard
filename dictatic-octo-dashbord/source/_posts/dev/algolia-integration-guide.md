@@ -1,6 +1,6 @@
 ---
 title: algolia integration guide
-tag: code hacks
+tags: [code, hacks]
 category: dev
 ---
 ## Integrating and Using Algolia Search in Your Web Projects

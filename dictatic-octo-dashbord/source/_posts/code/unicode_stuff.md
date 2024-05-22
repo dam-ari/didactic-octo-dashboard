@@ -1,6 +1,6 @@
 ---
 title: Unicode rocks 🦄 
-tag: code hacks
+tags: code, hacks
 category: coding-stuff
 ---
 
