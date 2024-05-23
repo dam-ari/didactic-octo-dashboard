@@ -101,7 +101,6 @@ const mediaPlayer = function(t, config) {
   t.player = {
     _id: utils.random(999999),
     group: true,
-    // 加载播放列表
     load: function(newList) {
       var d = ""
       var that = this
@@ -110,11 +109,11 @@ const mediaPlayer = function(t, config) {
         if(this.options.rawList !== newList) {
           this.options.rawList = newList;
           playlist.clear()
-          // 获取新列表
+          // Get a new list
           //this.fetch()
         }
       } else {
-        // 没有列表时，隐藏按钮
+        // When there is no list, hide the button
         d = "none"
         this.pause()
       }
@@ -164,7 +163,7 @@ const mediaPlayer = function(t, config) {
           }
         })
     },
-    // 根据模式切换当前曲目index
+
     mode: function() {
       var total = playlist.data.length;
 
@@ -208,7 +207,7 @@ const mediaPlayer = function(t, config) {
 
       this.init()
     },
-    // 直接设置当前曲目index
+
     switch: function(index) {
       if(typeof index == 'number'
         && index != playlist.index
@@ -218,7 +217,7 @@ const mediaPlayer = function(t, config) {
         this.init()
       }
     },
-    // 更新source为当前曲目index
+
     init: function() {
       var item = playlist.current()
 
@@ -784,16 +783,14 @@ const mediaPlayer = function(t, config) {
     if(t.player.created)
       return;
 
-
     t.player.options = Object.assign(option, config);
     t.player.options.mode = store.get('_PlayerMode') || t.player.options.mode
 
-    // 初始化button、controls以及click事件
+
     buttons.create()
 
-    // 初始化audio or video
     source = t.createChild(t.player.options.type, events);
-    // 初始化播放列表、预览、控件按钮等
+
     info.create();
 
     t.parentNode.addClass(t.player.options.type)

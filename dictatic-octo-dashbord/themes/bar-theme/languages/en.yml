@@ -2,12 +2,12 @@ name: English
 
 favicon:
   show: （●´3｀●）Goooood
-  hide: (´Д｀)Booooom
+  hide: (●'◡'●)
 
 title:
   archive: Archive
-  category: Category
-  tag: Tag
+  category: Categories
+  tag: Tags
   all: All
   not_found: Σ( ° △ °|||)︴404!
   category_in: Posted in category "%s"
@@ -108,8 +108,6 @@ symbol:
 reward:
   donate: Donate
   text: Cheers with a cup of [coffee]~(￣▽￣)~*
-  wechatpay: WeChat Pay
-  alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
 

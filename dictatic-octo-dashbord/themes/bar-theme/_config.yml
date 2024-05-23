@@ -153,8 +153,6 @@ reward:
   # If true, reward will be displayed in every article by default.
   enable: true
   account:
-    wechatpay: /wechatpay.png
-    alipay: /alipay.png
     paypal: /paypal.png
 
 # TagCloud settings for tags page.
@@ -172,12 +170,10 @@ tagcloud:
 # ---------------------------------------------------------------
 
 # Creative Commons 4.0 International License.
-# See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons:
-  license: by-nc-sa
+  # license: by-nc-sa
   language: deed.zh
 
 # Comments
@@ -215,11 +211,11 @@ creative_commons:
 
 # bgm
 audio:
-  # - title: 列表1
+  # - title: title
   #   list:
   #    - https://music.163.com/#/playlist?id=2943811283
   #    - https://music.163.com/#/playlist?id=2297706586
-  # - title: 列表2
+  # - title: title2
   #   list:
   #    - https://music.163.com/#/playlist?id=2031842656
 
@@ -229,8 +225,12 @@ image_server: # "https://acg.xydwz.cn/api/api.php"
 # Algolia Search
 # For more information: https://www.algolia.com
 search:
+  appId: 'Z52OAHCPAD'
+  apiKey: 'f8f462ccabd4abfec7507e1a2c23b488'
+  indexName: 'verse'
   hits:
     per_page: 10
+
 
 # Dependencies: https://github.com/amehime/hexo-renderer-multi-markdown-it
 pangu: false
@@ -250,10 +250,7 @@ quicklink:
 # ---------------------------------------------------------------
 # analytics & SEO Settings
 # ---------------------------------------------------------------
-baidu_analytics: # <app_id>
 
-# Disable Baidu transformation on mobile devices.
-disable_baidu_transformation: true
 
 # Automatically add external URL with Base64 encrypt & decrypt.
 exturl: true
@@ -267,10 +264,6 @@ google_site_verification:
 bing_site_verification:
 
 
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
-
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING `vendors` SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
@@ -279,7 +272,7 @@ baidu_push: false
 vendors:
   css:
     katex: npm/katex@0.12.0/dist/katex.min.css
-    comment: css/comment.css
+    # comment: css/comment.css
     fancybox: combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css
   js:
     pace: npm/pace-js@1.0.2/pace.min.js

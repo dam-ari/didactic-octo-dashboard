@@ -47,7 +47,7 @@ syntax_highlighter: highlight.js
 highlight:
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ' '
   wrap: true
   hljs: false
 prismjs:
@@ -102,3 +102,9 @@ theme: bar-theme
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+
+algolia:
+  appId: 'Z52OAHCPAD'
+  apiKey: 'f8f462ccabd4abfec7507e1a2c23b488'
+  indexName: 'verse'
