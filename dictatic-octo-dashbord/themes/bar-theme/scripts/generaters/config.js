@@ -21,7 +21,7 @@ hexo.extend.filter.register('before_generate', () => {
         i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
     };
 
-    for (const lang of ['en', 'ja', 'zh-CN', 'zh-HK', 'zh-TW']) {
+    for (const lang of ['en', 'he']) {
       mergeLang(lang);
     }
   }
@@ -39,5 +39,6 @@ hexo.extend.filter.register('before_generate', () => {
     hexo.theme.config.image_list = data.images
   } else {
     hexo.theme.config.image_list = yaml.load(fs.readFileSync(path.join(__dirname, '../../_images.yml')))
+
   }
 })

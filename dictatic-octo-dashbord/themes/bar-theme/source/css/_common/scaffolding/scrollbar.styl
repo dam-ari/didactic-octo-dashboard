@@ -1,7 +1,7 @@
 ::-webkit-scrollbar {
   width: .3125rem;
   height: .3125rem;
-  background: transparent;
+  background-color: linear-gradient(var(--color-orange), var(--color-pink)) !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -10,7 +10,7 @@
 }
 
 ::-webkit-scrollbar-track-piece {
-  background: transparent;
+  background: linear-gradient(var(--color-orange), var(--color-red));
 }
 
 ::-webkit-scrollbar-button {
@@ -29,9 +29,10 @@ $big-scrollbar {
   &::-webkit-scrollbar {
     width: .5rem;
     height: .5rem;
+
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--color-pink-light);
+    background-color: var(--primary-color);
   }
 }

@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div id="container">
+  <div id="container" style="overflow-x: hidden;">
     <header id="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="inner">
         <div id="brand">
@@ -58,7 +58,7 @@
           {%- endfor %}
         </ul>
       {%- else %}
-          <img src="{{ covers }}">
+          <img src="https://picsum.photos/200">
       {%- endif %}
       </div>
     </header>
@@ -76,7 +76,7 @@
       </svg>
     </div>
     <main>
-      <div class="inner">
+      <div class="inner" style="max-width: 90vw;">
         <div id="main" class="pjax">
           {% block content %}{% endblock %}
         </div>
@@ -144,14 +144,39 @@
     ]
   };
 </script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+
 
 <script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
 
 {{ _vendor_js() }}
 
 {{ _js('app.js')}}
+<script src="{{ url_for(theme.js + '/search.js') }}"></script>
 
-{{ partial('_partials/third-party/baidu-analytics.njk', {}, {cache: true}) }}
+
+<!-- Include the search container HTML -->
+<div id="search" style="display: none;">
+    <div class="inner">
+        <div class="header">
+            <span class="icon"><i class="ic i-search"></i></span>
+            <div class="search-input-container">
+            </div>
+            <span class="close-btn"><i class="ic i-times-circle"></i></span>
+        </div>
+        <div class="results">
+            <div class="inner">
+                <div id="search-stats"></div>
+                <div id="search-hits"></div>
+                <div id="search-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 </body>
 </html>

@@ -22,9 +22,9 @@
       {{ _url(page.link, postText + postTitleIcon, {class: 'link external', itemprop: 'url'}) }}
     {%- else %}
       {%- if page.type === 'categories' %}
-        {{- __('title.all') + __('title.category') }}
+        {{- __('title.all') + ' ' + __('title.category') }}
       {%- elif page.type === 'tags' %}
-        {{- __('title.all') + __('title.tag') }}
+        {{- __('title.all') + ' ' + __('title.tag') }}
       {%- elif page.type === '404' %}
         {{- __('title.not_found') }}
       {%- else %}

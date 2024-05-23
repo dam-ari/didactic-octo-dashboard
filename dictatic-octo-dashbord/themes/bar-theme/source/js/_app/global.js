@@ -54,12 +54,12 @@ const changeTheme = function(type) {
   var btn = $('.theme .ic')
   if(type == 'dark') {
     HTML.attr('data-theme', type);
-    btn.removeClass('i-sun')
-    btn.addClass('i-moon')
+    btn.removeClass('i-moon')
+    btn.addClass('i-sun')
   } else {
     HTML.attr('data-theme', null);
-    btn.removeClass('i-moon');
-    btn.addClass('i-sun');
+    btn.removeClass('i-sun');
+    btn.addClass('i-moon');
   }
 }
 
@@ -91,40 +91,41 @@ const themeColorListener = function () {
   $('.theme').addEventListener('click', function(event) {
     var btn = event.currentTarget.child('.ic')
 
-    var neko = BODY.createChild('div', {
-      id: 'neko',
-      innerHTML: '<div class="planet"><div class="sun"></div><div class="moon"></div></div><div class="body"><div class="face"><section class="eyes left"><span class="pupil"></span></section><section class="eyes right"><span class="pupil"></span></section><span class="nose"></span></div></div>'
+    var unicorn = BODY.createChild('div', {
+      id: 'unicorn',
+      innerHTML: '<div class="planet"><div class="sun"></div><div class="moon"></div></div><div class="body"><div class="face"><section class="eyes left"><span class="pupil"></span></section><section class="eyes right"><span class="pupil"></span></section><span class="nose"></span><div class="horn"></div></div></div>'
     });
 
-    var hideNeko = function() {
-        transition(neko, {
+    var hideUnicorn = function() {
+        transition(unicorn, {
           delay: 2500,
           opacity: 0
         }, function() {
-          BODY.removeChild(neko)
+          BODY.removeChild(unicorn)
         });
     }
 
-    if(btn.hasClass('i-sun')) {
+    if(btn.hasClass('i-moon')) {
       var c = function() {
-          neko.addClass('dark');
+          unicorn.addClass('dark');
           changeTheme('dark');
           store.set('theme', 'dark');
-          hideNeko();
+          hideUnicorn();
         }
     } else {
-      neko.addClass('dark');
+      unicorn.addClass('dark');
       var c = function() {
-          neko.removeClass('dark');
-          changeTheme();
+          unicorn.removeClass('dark');
+          changeTheme('light');
           store.set('theme', 'light');
-          hideNeko();
+          hideUnicorn();
         }
     }
-    transition(neko, 1, function() {
+    transition(unicorn, 1, function() {
       setTimeout(c, 210)
     })
   });
+
 }
 
 const visibilityListener = function () {

@@ -32,7 +32,7 @@ code,
 }
 
 
-// 代码样式
+
 :not(pre)>code {
   color: var(--primary-color);
   border-radius: .3rem;
@@ -47,6 +47,8 @@ code,
   overflow: hidden;
   border-radius: .5rem;
   box-shadow: 0 .3125rem .625rem -.125rem var(--grey-9-a1);
+  margin: 1.45rem auto;
+  padding: 1rem 0 0 0;
 
   @extend $code-block;
 
@@ -59,11 +61,12 @@ code,
     position: absolute;
     border-radius: 50%;
     background: #fc625d;
-    width: .75rem;
-    height: .75rem;
-    left: .75rem;
-    top: .8125rem;
-    box-shadow: 1.25rem 0 #fdbc40, 2.5rem 0 #35cd4b;
+    width: 0.4rem;
+    height: 0.4rem;
+    left: 0.5rem;
+    top: 0.5rem;
+    z-index: 10;
+    box-shadow: 0.5rem 0 #fdbc40, 1rem 0 #35cd4b;
   }
 
   figcaption {
