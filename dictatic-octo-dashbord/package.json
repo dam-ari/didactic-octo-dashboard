@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
-    "index": "node create-yml-from-env.js && hexo clean && hexo generate && hexo --config alg.yml algolia",
+    "reindex": "node create-yml-from-env.js && hexo clean && hexo generate && hexo --config alg.yml algolia",
+    "index": "node create-yml-from-env.js && hexo generate && hexo --config alg.yml algolia",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
