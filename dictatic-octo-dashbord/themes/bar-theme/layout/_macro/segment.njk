@@ -3,37 +3,30 @@
   {%- set postTitleIcon = '<i class="ic i-link-alt"></i>' %}
 {%- endif %}
 {%- set postText = item.title or item.link or __('post.untitled') %}
-{%- set backgroundUrl %}
-  {%- if item.background %}
-    {%- if item.background.startsWith('.') %}
-      {{ item.path | trim('/') + '/' + item.background | trim('/') }}
-    {%- else %}
-      {{ item.background }}
-    {%- endif %}
-  {%- endif %}
-{%- endset %}
+{%- set backgroundUrl = item.background %}
+{%- set useGradient = not item.background %}
 <article class="item">
-  {% if backgroundUrl %}
-  <div class="cover" style="background-image: url('{{ backgroundUrl }}');">
-    {{ _url(item.link or item.path, '<img data-src="'+ backgroundUrl +'" src="'+ backgroundUrl +'" alt="background image">', {itemprop: 'url', title: postText}) }}
+  <div class="cover" style="{% if useGradient %}background: linear-gradient(305deg, #024253 0%, #76939b 100%);{% else %}background-image: url('{{ backgroundUrl }}');{% endif %}">
+    {%- if not useGradient %}
+      {{ _url(item.link or item.path, '<img data-src="' ~ backgroundUrl ~ '" src="' ~ backgroundUrl ~ '" alt="background image">', {itemprop: 'url', title: postText}) }}
+    {%- endif %}
   </div>
-  {% endif %}
-  <div class="info" style="padding-left: 50px; padding-right: 50px; flex-grow: 1; display: flex; flex-direction: column;">
+  <div class="info">
     {{ postmeta.render(item) }}
     <h3>{{ _url(item.link or item.path, postText + (postTitleIcon or ''), {itemprop: 'url', title: postText}) }}</h3>
-    <div class="excerpt" style="flex-grow: 1;">
+    <div class="excerpt">
       {%- if item.description %}
         {{ item.description }}
-      {% elif item.excerpt %}
+      {%- elif item.excerpt %}
         {{ item.excerpt }}
-      {% else %}
+      {%- else %}
         {{ item.content | striptags(true) | escape | truncate(300) }}
       {%- endif %}
     </div>
     {%- if item.categories.length > 0 %}
     <div class="meta footer">
       <span>
-      {%- set lastcat = item.categories.last() %}
+        {%- set lastcat = item.categories.last() %}
         {{ _url(lastcat.path, '<i class="ic i-flag"></i>' + lastcat.name, {itemprop: 'url', title: lastcat.name}) }}
       </span>
     </div>
