@@ -2,7 +2,7 @@
 title: Unicode rocks 🦄 
 tags: code, hacks
 category: coding-stuff
-background: "https://github.com/dam-ari/didactic-octo-dashboard/blob/0715e4ad432c4b0c40c400c70414b695266d4d36/dictatic-octo-dashbord/source/_posts/code/cover.jpg"
+background: https://github.com/dam-ari/didactic-octo-dashboard/blob/0715e4ad432c4b0c40c400c70414b695266d4d36/dictatic-octo-dashbord/source/_posts/code/cover.jpg?raw=true
 ---
 
 <!-- ### Unicode -->

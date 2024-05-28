@@ -4,14 +4,18 @@
 {%- endif %}
 {%- set postText = item.title or item.link or __('post.untitled') %}
 {%- set backgroundUrl = item.background %}
+{%- set gradientCover = item.cover or item.background%}
 {%- set useGradient = not item.background %}
+{%- set randomGradient = randomGradient() %}
 <article class="item">
-  <div class="cover" style="{% if useGradient %}background: linear-gradient(305deg, #024253 0%, #76939b 100%);{% else %}background-image: url('{{ backgroundUrl }}');{% endif %}">
+  {% if gradientCover %}
+  <div class="cover" style="{% if useGradient %}background: {{ randomGradient }};{% else %}background-image: url('{{ backgroundUrl }}');{% endif %}">
     {%- if not useGradient %}
-      {{ _url(item.link or item.path, '<img data-src="' ~ backgroundUrl ~ '" src="' ~ backgroundUrl ~ '" alt="background image">', {itemprop: 'url', title: postText}) }}
+      {{ _url(item.link or item.path, '<img data-src=' ~ backgroundUrl ~ ' src=' ~ backgroundUrl ~ ' alt="background image">', {itemprop: 'url', title: postText}) }}
     {%- endif %}
   </div>
-  <div class="info">
+  {% endif %}
+  <div class="info" style="padding-left: 50px; padding-right: 50px; flex-grow: 1; display: flex; flex-direction: column;">
     {{ postmeta.render(item) }}
     <h3>{{ _url(item.link or item.path, postText + (postTitleIcon or ''), {itemprop: 'url', title: postText}) }}</h3>
     <div class="excerpt">
