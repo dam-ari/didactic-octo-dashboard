@@ -3,14 +3,25 @@
   {%- set postTitleIcon = '<i class="ic i-link-alt"></i>' %}
 {%- endif %}
 {%- set postText = item.title or item.link or __('post.untitled') %}
+{%- set backgroundUrl %}
+  {%- if item.background %}
+    {%- if item.background.startsWith('.') %}
+      {{ item.path | trim('/') + '/' + item.background | trim('/') }}
+    {%- else %}
+      {{ item.background }}
+    {%- endif %}
+  {%- endif %}
+{%- endset %}
 <article class="item">
-  <div class="cover">
-    {{ _url(item.link or item.path, '<img data-src="'+ _cover(item) +'">', {itemprop: 'url', title: postText}) }}
+  {% if backgroundUrl %}
+  <div class="cover" style="background-image: url('{{ backgroundUrl }}');">
+    {{ _url(item.link or item.path, '<img data-src="'+ backgroundUrl +'" src="'+ backgroundUrl +'" alt="background image">', {itemprop: 'url', title: postText}) }}
   </div>
-  <div class="info">
-    {{postmeta.render(item)}}
+  {% endif %}
+  <div class="info" style="padding-left: 50px; padding-right: 50px; flex-grow: 1; display: flex; flex-direction: column;">
+    {{ postmeta.render(item) }}
     <h3>{{ _url(item.link or item.path, postText + (postTitleIcon or ''), {itemprop: 'url', title: postText}) }}</h3>
-    <div class="excerpt">
+    <div class="excerpt" style="flex-grow: 1;">
       {%- if item.description %}
         {{ item.description }}
       {% elif item.excerpt %}

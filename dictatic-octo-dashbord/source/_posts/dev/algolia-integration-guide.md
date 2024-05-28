@@ -2,6 +2,7 @@
 title: algolia integration guide
 tags: [code, hacks]
 category: dev
+background: "https://picsum.photos/200"
 ---
 ## Integrating and Using Algolia Search in Your Web Projects
 
