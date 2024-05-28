@@ -46,6 +46,7 @@ desktop() {
 
 desktop-large() {
   @media (min-width: 1200px) {
+    max-width: 'calc(90% - %s)' % unit($content-desktop-padding / 2, 'rem');
     {block};
   }
 }
