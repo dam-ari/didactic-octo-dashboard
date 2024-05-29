@@ -4,6 +4,7 @@ date: 2024-05-22 23:12:02
 tags: [YAML, Environment Variables, Node.js, Automation, Dotenv]
 # category: [Tutorial, Web Development]
 category: Tutorial
+background:
 ---
 
 In this tutorial, you'll learn how to create a YAML file from environment variables using a simple Node.js script. This approach is especially useful for applications that need to manage configuration dynamically.

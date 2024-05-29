@@ -1,6 +1,6 @@
 ---
 title: tesss
-# tag: new-life; test
+tags: [new-life, test]
 cover: false
 ---
 ## would    wouldn't it be 

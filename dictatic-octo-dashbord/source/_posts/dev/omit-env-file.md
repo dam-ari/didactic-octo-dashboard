@@ -1,4 +1,3 @@
-
 ---
 title: How to Omit .env File from Being Uploaded to Git
 date: 2024-05-23
