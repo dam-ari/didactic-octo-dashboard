@@ -6,8 +6,6 @@ background:
 cover: true
 ---
 
-# JavaScript Basics Quiz
-
 <details>
   <summary>What are the different data types in JavaScript?</summary>
   
