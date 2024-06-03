@@ -1,14 +1,8 @@
 ---
 title: The Flow of a Cloud-Based Microservices Architecture
 date: 2024-06-03
-tags:
-  - cloud
-  - microservices
-  - Kubernetes
-  - ArgoCD
-  - Terraform
-  - DevOps
-category: Technology, Cloud Computing, DevOps
+tags: [cloud ,microservices ,Kubernetes ,ArgoCD ,Terraform ,DevOps]
+category: [Technology, Cloud Computing, DevOps]
 background: 
 cover: "true"
 ---
