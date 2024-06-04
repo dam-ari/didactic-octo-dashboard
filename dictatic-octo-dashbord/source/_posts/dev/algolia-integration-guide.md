@@ -1,6 +1,7 @@
 ---
 title: algolia integration guide
 tags: [code, hacks]
+date: 24/05/2024
 category: dev
 background: "https://picsum.photos/200"
 ---

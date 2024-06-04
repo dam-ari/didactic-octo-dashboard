@@ -1,6 +1,6 @@
 ---
 title: Creating YAML Files from Environment Variables with Ease
-date: 2024-05-22 23:12:02
+date: 22/05/2024 23:12:02
 tags: [YAML, Environment Variables, Node.js, Automation, Dotenv]
 # category: [Tutorial, Web Development]
 category: Tutorial

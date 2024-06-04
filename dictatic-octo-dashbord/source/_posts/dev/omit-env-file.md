@@ -1,6 +1,6 @@
 ---
 title: How to Omit .env File from Being Uploaded to Git
-date: 2024-05-23
+date: 23/05/2024
 tags: [git, .env, gitignore, security]
 category: Version Control
 ---

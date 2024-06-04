@@ -1,6 +1,6 @@
 ---
 title: How to Omit a File from Being Uploaded to Git
-date: 2024-05-23
+date: 23/05/2024
 tags: [git, gitignore]
 category: Version Control
 ---
